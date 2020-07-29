@@ -1,0 +1,13 @@
+CMakeFiles/
+CMakeCache.txt
+Debug/
+Release/
+.vs
+**/Debug/
+**/Release/
+*.cmake
+*.sln
+*.vcxproj*
+*.VC*
+*.dir
+*.db

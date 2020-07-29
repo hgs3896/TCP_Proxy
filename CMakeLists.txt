@@ -1,0 +1,26 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.6)
+PROJECT(TCP_Proxy)
+
+SET(BOOST "C:/lib/boost_1_73_0")
+SET(BOOST_LIB "${BOOST}/stage/lib")
+
+SET(PROJECT_BINARY_DIR bin)
+
+SET(HEADERS
+	include/Proxy.hpp
+)
+
+SET(SRC	
+	src/Acceptor.cpp
+	src/Bridge.cpp
+	src/IOSThreadPool.cpp
+)
+
+INCLUDE_DIRECTORIES(include ${BOOST})
+LINK_DIRECTORIES(${BOOST_LIB})
+
+ADD_EXECUTABLE(tcp_proxy Main.cpp ${SRC} ${HEADERS})
+
+SET_PROPERTY(
+	DIRECTORY PROPERTY VS_STARTUP_PROJECT TCP_Proxy
+)
